@@ -13,7 +13,7 @@ class Location(models.Model):
     class Meta:
         ordering = ['name']
         
-    def save_editor(self):
+    def save_location(self):
         self.save()
         
 class Category(models.Model):
@@ -22,10 +22,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
-    def save_editor(self):
+    def save_category(self):
         self.save()
     
-class Article(models.Model):
+class Image(models.Model):
     image_name = models.CharField(max_length =60)
     category = models.ForeignKey('Category', on_delete=models.CASCADE,)
     location = models.ForeignKey('Location', on_delete=models.CASCADE,)
@@ -43,7 +43,7 @@ class Article(models.Model):
     #     news = cls.objects.filter(pub_date__date = date)
     #     return news
     
-    # @classmethod
-    # def search_by_title(cls,search_term):
-    #     news = cls.objects.filter(title__icontains=search_term)
-    #     return news
+    @classmethod
+    def search_by_location(cls,search_term):
+        news = cls.objects.filter(location__icontains=search_term)
+        return news
