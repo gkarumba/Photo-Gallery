@@ -32,10 +32,14 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'articles/')
     
+    def save_image(self):
+        self.save()
+    
     @classmethod
     def get_image_by_id(cls,id):
         image = cls.objects.filter(id=id)
         return image
+    
     
     # @classmethod
     # def days_news(cls,date):
