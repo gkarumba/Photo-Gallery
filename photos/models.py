@@ -40,6 +40,10 @@ class Image(models.Model):
         image = cls.objects.filter(id=id)
         return image
     
+    @classmethod
+    def delete_image_by_id(cls,id):
+        image = cls.objects.remove(id=id)
+        return image
     
     # @classmethod
     # def days_news(cls,date):
