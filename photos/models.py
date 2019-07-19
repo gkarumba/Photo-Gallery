@@ -45,10 +45,10 @@ class Image(models.Model):
         image = cls.objects.remove(id=id)
         return image
     
-    # @classmethod
-    # def days_news(cls,date):
-    #     news = cls.objects.filter(pub_date__date = date)
-    #     return news
+    @classmethod
+    def update_image_by_id(cls,id):
+        image = cls.objects.update(id=id)
+        return image
     
     @classmethod
     def search_by_location(cls,search_term):
