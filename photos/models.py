@@ -25,26 +25,25 @@ class Category(models.Model):
     def save_editor(self):
         self.save()
     
-# class Article(models.Model):
-#     title = models.CharField(max_length =60)
-#     post = models.TextField()
-#     editor = models.ForeignKey('Editor', on_delete=models.CASCADE,)
-#     tags = models.ManyToManyField(tags)
-#     pub_date = models.DateTimeField(auto_now_add=True)
-#     article_image = models.ImageField(upload_to = 'articles/')
+class Article(models.Model):
+    image_name = models.CharField(max_length =60)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE,)
+    location = models.ForeignKey('Location', on_delete=models.CASCADE,)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to = 'articles/')
     
-#     @classmethod
-#     def todays_news(cls):
-#         today = dt.date.today()
-#         news = cls.objects.filter(pub_date__date = today)
-#         return news
+    # @classmethod
+    # def todays_news(cls):
+    #     today = dt.date.today()
+    #     news = cls.objects.filter(pub_date__date = today)
+    #     return news
     
-#     @classmethod
-#     def days_news(cls,date):
-#         news = cls.objects.filter(pub_date__date = date)
-#         return news
+    # @classmethod
+    # def days_news(cls,date):
+    #     news = cls.objects.filter(pub_date__date = date)
+    #     return news
     
-#     @classmethod
-#     def search_by_title(cls,search_term):
-#         news = cls.objects.filter(title__icontains=search_term)
-#         return news
+    # @classmethod
+    # def search_by_title(cls,search_term):
+    #     news = cls.objects.filter(title__icontains=search_term)
+    #     return news
