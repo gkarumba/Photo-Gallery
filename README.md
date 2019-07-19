@@ -1,15 +1,16 @@
-# BLOGPOST
+# PHOTO GALLERY
 
 ## Description
-#### This is a web application that allows users to express themselves using a blog posts. They they first create an account then log in to start creating blogs..
+#### This is a web application that allows users to view photos. They can select them based on the location where the photo was taken or the category of the photo..
 #### By **gkarumba**
 The user can:
-* See various blog posts
-* View blogposts they like
-* See the latests posts
-* Subscribe to latest post service
+* See various photos
+* View photos by location/category
+* Copy link to the photo
+* View image details
 ## Setup/Installation Requirements
 ### Prerequisites
+*django2.2
 * python3.6
 * pip
 * Virtual environment(virtualenv)
@@ -17,8 +18,8 @@ The user can:
 ### Cloning and running
 * Clone the application using git clone(this copies the app onto your device). In terminal:
 
-          $ git clone https://github.com/gkarumba/blogpost.git
-          $ cd blogpost
+          $ git clone https://github.com/gkarumba/Photo-Gallery.git
+          $ cd Photo-Gallery
 
 * Creating the virtual environment
 
@@ -26,17 +27,14 @@ The user can:
           $ source virtual/bin/env
           $ curl https://bootstrap.pypa.io/get-pip.py | python
 
-* Installing Flask and other Modules
+* Installing Django and other Modules
 
-          $ python3.6 -m pip install Flask
-          $ python3.6 -m pip install Flask-Bootstrap
-          $ python3.6 -m pip install Flask-Script
           $ python3.6 -m pip install -r requirements.txt
 
 * Run the application:
-
-          $ chmod a+x start.sh
-          $ ./start.sh
+        
+          $ python3 manage.py runserver  
+          
 ### Testing the Application
 * To run the tests for the class files:
 
@@ -44,17 +42,13 @@ The user can:
 
 ## Technologies Used
 * Python 3.6
-* Flask
+* Django2.2
 ## Behaviour driven development/ Specifications
 
 | Behaviour |  Sample Input | Sample Output |
 | :---------------- | :---------------: | :------------------ |
-| Display latest blogs | On page load | List of various blogs I have written |
-| Registration | Submit regitration form | User creates an account and receives welcome email |
-| Subscription | Submit subscription form| User receives email eb=very time there is a new post|
-| Edit posts(writer) | Submit edit post | The post is updated with new data from user |
-| Delete posts(writer) | Click delete post | Post is deleted |
-| Delete comments(writer) | Click delete comment | Comment is deleted |
+| Display Photos | On page load | List of various photos taken |
+
 
 ## Support and contact details
 For any questions, troubleshooting or contributions,  find me on:
