@@ -16,11 +16,11 @@ class Location(models.Model):
     def save_editor(self):
         self.save()
         
-# class tags(models.Model):
-#     name = models.CharField(max_length =30)
+class Category(models.Model):
+    name = models.CharField(max_length =30)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
     
 # class Article(models.Model):
 #     title = models.CharField(max_length =60)
