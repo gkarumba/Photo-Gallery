@@ -4,23 +4,23 @@ import datetime as dt
 
 # Create your models here.
 class Location(models.Model):
-    name = models.CharField(max_length =30)
+    location = models.CharField(max_length =30)
     
 
     def __str__(self):
-        return self.name
+        return self.location
     
     class Meta:
-        ordering = ['name']
+        ordering = ['location']
         
     def save_location(self):
         self.save()
         
 class Category(models.Model):
-    name = models.CharField(max_length =30)
+    category = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.name
+        return self.category
     
     def save_category(self):
         self.save()
@@ -32,8 +32,16 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'articles/')
     
+    def __str__(self):
+        return self.image_name
+    
     def save_image(self):
         self.save()
+    
+    @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
     
     @classmethod
     def get_image_by_id(cls,id):
