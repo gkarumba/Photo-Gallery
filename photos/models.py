@@ -27,10 +27,11 @@ class Category(models.Model):
     
 class Image(models.Model):
     image_name = models.CharField(max_length =60)
+    image_description = models.CharField(max_length =255)
     category = models.ForeignKey('Category', on_delete=models.CASCADE,)
     location = models.ForeignKey('Location', on_delete=models.CASCADE,)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to = 'articles/')
+    image = models.ImageField(upload_to='images/',default='DEFAULT VALUE')
     
     def __str__(self):
         return self.image_name
