@@ -23,8 +23,8 @@ def index2(request):
     return render(request,'home2.html',{"images":images, "location": location})
 
 def search_by_category(request):
-    if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
         print(search_term)
         found_images = Image.search_by_category(search_term)
         print(found_images)
@@ -37,5 +37,6 @@ def search_by_category(request):
 def search_by_location(request, location):
     locations = Location.objects.all()
     images = Image.search_by_location(location)
+    print(images)
     title = f'{location} Photos'
     return render(request, 'location.html', {'title': title, 'images': images, 'locations': locations})

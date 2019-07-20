@@ -48,11 +48,14 @@ The user can:
 | Behaviour |  Sample Input | Sample Output |
 | :---------------- | :---------------: | :------------------ |
 | Display Photos | On page load | List of various photos taken |
-
+| Display Photos Details | On click photo | List of photos details |
+| Display Photos Based on Location | On location | List of photos taken on that location |
+| Display Photos Based on Category | On search photo category | List of photos on that category |
+| Copy photo link to clipboard | On click copy | Copy photo link |
 
 ## Support and contact details
 For any questions, troubleshooting or contributions,  find me on:
 * Email: gachegua@gmail.com
 ### License
 MIT License
-Copyright (c) {2019} (gkarumba)[]
+Copyright (c) {2019} (gkarumba)[https://github.com/gkarumba/Photo-Gallery/blob/master/LICENSE]

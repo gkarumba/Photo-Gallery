@@ -2,13 +2,13 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <!-- <div class="row">
         {% if images %}
         <h2> Showing {{images|length}} images for the location "{{title}}"</h2>
         {% else %}
         <h2> Found 0 images for the location "{{title}}"</h2>
         {% endif %}
-    </div>
+    </div> -->
     <div class="row">
         {% if images %}
             {% for image in images %}

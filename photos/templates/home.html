@@ -14,19 +14,26 @@
     </script>
 </head>  
     <div class="container-fluid">
-        <!-- <div class="row">
-            <h1>Locations</h1>
+        <div class="row">
+            <!-- <h1>Locations</h1>
             {% for location in location %}
-            <div class="col-md-6">
-                <div class="btn btn-outline-default">
+            <div class="col-lg-4">
                     <p><a href="/location/{{location.id}}">{{location.location}}</a></p>
                     {% empty %}
                     <h4>There are no locations</h4>
-                </div>
             </div>
-            {% endfor %} 
-        </div> -->
+            {% endfor %}  -->
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!--  -->
         <div class="row">
+            <ul class="list-inline">
+                <li class="list-inline-item">Locations</li>
+                {% for location in location %}
+                <li class="list-inline-item"><a href="/location/{{location.id}}">{{location.location}}</a></li>
+                {% endfor %}
+            </ul>
             {% for image in images %}
             {% if image.id <= 6 %}
             <div class="col-lg-4 col-lg-4 col-lg-4 padding-0 hover ">
